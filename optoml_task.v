@@ -33,14 +33,14 @@ module pipeline_register #(parameter int DATA_WIDTH = 32);
         end
 		else
 		begin
-            // Input handshake fires
+            // Input handshake
 			
             if (in_valid && in_ready)
 			begin
                 data_reg <= in_data;
                 valid_reg <= 1'b1;
             end 
-            // Output handshake fires without new input
+            // Output handshake
 			
             else if (out_valid && out_ready)
 			begin
@@ -55,5 +55,6 @@ module pipeline_register #(parameter int DATA_WIDTH = 32);
             end
         end
     end
+
 
 endmodule
